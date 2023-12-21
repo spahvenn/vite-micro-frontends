@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import federation from '@originjs/vite-plugin-federation'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import federation from "@originjs/vite-plugin-federation";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,15 +10,15 @@ export default defineConfig({
       name: "remote_app",
       filename: "remoteEntry.js",
       exposes: {
-        './Button': './src/components/Button'
+        "./AboutPage": "./src/components/AboutPage",
       },
-      shared: ['react','react-dom']
-    })
+      shared: ["react", "react-dom"],
+    }),
   ],
   build: {
     modulePreload: false,
-    target: 'esnext',
+    target: "esnext",
     minify: false,
-    cssCodeSplit: false
-  }
-})
+    cssCodeSplit: false,
+  },
+});

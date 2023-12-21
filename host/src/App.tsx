@@ -1,7 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root.tsx";
 import React, { Suspense } from "react";
-const Button = React.lazy(() => import("remoteApp/Button"));
+const AboutPage = React.lazy(() => import("remoteApp/AboutPage"));
+
+// TODO: mitä sisältöä sovellukseen?
+// TODO: parempi ulkoasu
 
 const router = createBrowserRouter([
   {
@@ -13,7 +16,7 @@ const router = createBrowserRouter([
         path: "/about",
         element: (
           <Suspense fallback={<div>loading</div>}>
-            <Button></Button>
+            <AboutPage />
           </Suspense>
         ),
       },

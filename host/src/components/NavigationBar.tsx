@@ -1,19 +1,21 @@
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { AppBar, Box, Container, Grid } from "@mui/material";
+import { NavigationItem } from "./NavigationItem.tsx";
 
 export default function NavigationBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to={"/"}>Home</Link>
-          </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to={"/about"}>About</Link>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <AppBar position="sticky">
+      <Container maxWidth="lg">
+        <Grid container>
+          <Grid item xs={12}>
+            <Box sx={{ display: "flex" }}>
+              <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+                <NavigationItem to={"/"}>Home</NavigationItem>
+                <NavigationItem to={"/about"}>About</NavigationItem>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+    </AppBar>
   );
 }
