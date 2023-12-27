@@ -1,4 +1,15 @@
+import { Button, Typography } from "@mui/material";
+import { useState } from "react";
+
 export const AboutPage = () => {
-  return <Typography>remote button</Typography>;
+  const [counter, setCounter] = useState(0);
+  return (
+    <>
+      <Button variant="contained" onClick={() => setCounter(counter + 1)}>
+        remote button
+      </Button>
+      <Typography>Button clicked {counter} times</Typography>
+    </>
+  );
 };
 export default AboutPage;
