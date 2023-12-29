@@ -1,8 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root.tsx";
-import React, { Suspense } from "react";
-import { Box, Typography } from "@mui/material";
-const AboutPage = React.lazy(() => import("remoteApp/AboutPage"));
+import About from "./routes/about/page.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,16 +13,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: (
-          <Suspense fallback={<div>loading</div>}>
-            <Typography>
-              Area inside the black border is a microfrontend
-            </Typography>
-            <Box sx={{ border: "1px solid black", padding: "10px" }}>
-              <AboutPage />
-            </Box>
-          </Suspense>
-        ),
+        element: <About />,
       },
     ],
   },

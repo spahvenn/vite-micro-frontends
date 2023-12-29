@@ -1,7 +1,10 @@
 import { Button, Typography } from "@mui/material";
 import { useState } from "react";
 
-export const AboutPage = () => {
+type Props = {
+  hostCounter: number;
+};
+export const AboutPage = ({ hostCounter }: Props) => {
   const [counter, setCounter] = useState(0);
   return (
     <>
@@ -9,6 +12,7 @@ export const AboutPage = () => {
         remote button
       </Button>
       <Typography>Button clicked {counter} times</Typography>
+      <Typography>Host button clicked {hostCounter} times</Typography>
     </>
   );
 };
